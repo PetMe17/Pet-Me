@@ -1,0 +1,48 @@
+git init
+
+git config --global <clave> <valor> 			claves: user.name	user.email
+
+mirar batch
+
+commit.template
+alias.<apodo>
+user.signingkey
+
+Iniciacion de un repositorio: Por primera vez: git init
+			      Por clonacion: git clone
+
+Primera version del proyecto: git add <archivo>
+			      git commit -m <"Descripcion">
+			      git commit -am <"Descripcion"> (solo manda archivos modificados e ignora los nuevos)
+
+Transicion de estados:git checkout -- <archivos>	Regresa a su estado los archivos antes de staging
+		      git add <archivo> 	Manda a staging los archivos
+	    	      git resert HEAD <archivo>		Saca de staging el archivo especificado
+		      git commit -m <"Descripcion">	Manda al repositorio todo lo que este en staging
+
+Consultas de estados de proyecto:
+		git status [-s] [--ignore]
+		gif diff [.](Mandar todo el directorio) [-cached](archivos ya en staging)
+
+Etiquetas:Sirven como referencias a un commit particular
+	git tag [<etiqueta> -m <"Descripcion">] [-f modificar] [-d borrar]
+
+Ramificaciones:
+	Crear rama: git branch <nombre>
+	Ir a rama:  git checkout <rama>
+	Integrar trabajos entre ramas: git merge <hijo>
+				       git rebase (complicado)
+
+Solucion de conflictos mediante ramas:
+			git merge <> Caso de error**
+			git status (mostrar diferencias entre modifcaciones del mismo archivo)
+			git diff <archivo> (decidir que linea de version se va a quedar)
+
+Descargar contenido remoto:
+		git fetch <>
+		git pull [<remoto> [rama]] [-u]
+		git push [<remoto> [rama]] [-u]
+
+Flujos de Trabajo:03:03 p. m. 09/03/2017
+	Flujo centralizado
+	Flujo por Jerarquia ()                                                                                                                                        
