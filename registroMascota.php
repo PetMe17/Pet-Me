@@ -27,7 +27,7 @@
             }
         } else {
             $message = "Se omitio un campo obligatorio!";
-        }
+        } 
     }
 ?>
 
