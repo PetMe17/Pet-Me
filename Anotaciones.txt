@@ -21,7 +21,7 @@ Transicion de estados:git checkout -- <archivos>	Regresa a su estado los archivo
 		      git commit -m <"Descripcion">	Manda al repositorio todo lo que este en staging
 
 Consultas de estados de proyecto:
-		git status [-s] [--ignore]
+		git status [-v] [--ignore]
 		gif diff [.](Mandar todo el directorio) [-cached](archivos ya en staging)
 
 Etiquetas:Sirven como referencias a un commit particular
