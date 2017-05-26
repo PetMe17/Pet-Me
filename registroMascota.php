@@ -6,16 +6,17 @@
 <?php
     if(isset($_POST["enviar"])){
 
-        if (!empty($_POST['titulo']) && !empty($_POST['categoria']) && !empty($_POST['edad']) && !empty($_POST['lugar']) && !empty($_POST['descripcion']) && !empty($_POST['image'])){
+        if (!empty($_POST['titulo']) && !empty($_POST['categoria']) && !empty($_POST['edad']) && !empty($_POST['lugar']) && !empty($_POST['descripcion']) /*&& !empty($_POST['image'])*/)
+        {
             $titulo=$_POST['titulo'];
             $categoria=$_POST['categoria'];
             $edad=$_POST['edad'];
             $image=$_POST['image'];
             $lugar=$_POST['lugar'];
             $descripcion=$_POST['descripcion'];
-            $hoy = getdate();
+            //$hoy = getdate();
 
-            $sql = "INSERT INTO usuarios(titulo, descripcion, categoria, edad_mascota, lugar, fecha, foto) VALUES('$titulo','$descripcion','$categoria','$edad','$lugar','$hoy','$image')";
+            $sql = "INSERT INTO publicacion_mascotas(titulo, descripcion, categoria, edad_mascota, lugar, imagen) VALUES('$titulo','$descripcion','$categoria','$edad','$lugar','$image')";
 
             $resultQuery = mysql_query($sql);
 
@@ -62,7 +63,7 @@
             <h2>Registrar mascota</h2>
         </div>
 
-
+        <h1 class="aviso"><?php if (!empty($message)) {echo "<p class=\"error\">" . "Atencion: ". $message . "</p>";} ?></h1>
         <div class="modal-body">
             <!-- Show feedback sent -->
             <div class="result">
@@ -126,6 +127,7 @@
                     </div>
 
                     <!-- Subir imagen -->
+                    <input type="HIDDEN" name="MAX_FILE_SIZE" value="102400">
                     <input type="file" name="image" id="image">
 
 
